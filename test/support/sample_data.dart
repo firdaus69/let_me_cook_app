@@ -1,0 +1,215 @@
+import 'package:let_me_cook/data/models/country.dart';
+import 'package:let_me_cook/data/models/ingredient.dart';
+import 'package:let_me_cook/data/models/recipe.dart';
+
+// Sample catalogue served by the fake API in tests (same data as the backend seed).
+
+const malaysia = Country('MY', 'Malaysia');
+const supportedCountries = [malaysia];
+
+const sampleIngredients = [
+  Ingredient('Chicken', IngredientCategory.protein),
+  Ingredient('Eggs', IngredientCategory.protein),
+  Ingredient('Beef', IngredientCategory.protein),
+  Ingredient('Prawns', IngredientCategory.protein),
+  Ingredient('Tofu', IngredientCategory.protein),
+  Ingredient('Anchovies', IngredientCategory.protein),
+  Ingredient('Onion', IngredientCategory.vegetables),
+  Ingredient('Garlic', IngredientCategory.vegetables),
+  Ingredient('Chili', IngredientCategory.vegetables),
+  Ingredient('Tomato', IngredientCategory.vegetables),
+  Ingredient('Cabbage', IngredientCategory.vegetables),
+  Ingredient('Bean sprouts', IngredientCategory.vegetables),
+  Ingredient('Carrot', IngredientCategory.vegetables),
+  Ingredient('Lemongrass', IngredientCategory.vegetables),
+  Ingredient('Shallots', IngredientCategory.vegetables),
+  Ingredient('Milk', IngredientCategory.dairy),
+  Ingredient('Butter', IngredientCategory.dairy),
+  Ingredient('Cheese', IngredientCategory.dairy),
+  Ingredient('Coconut milk', IngredientCategory.dairy),
+  Ingredient('Rice', IngredientCategory.pantry),
+  Ingredient('Noodles', IngredientCategory.pantry),
+  Ingredient('Flour', IngredientCategory.pantry),
+  Ingredient('Soy sauce', IngredientCategory.pantry),
+  Ingredient('Oyster sauce', IngredientCategory.pantry),
+  Ingredient('Sugar', IngredientCategory.pantry),
+  Ingredient('Turmeric', IngredientCategory.spices),
+  Ingredient('Curry powder', IngredientCategory.spices),
+  Ingredient('Cumin', IngredientCategory.spices),
+  Ingredient('Black pepper', IngredientCategory.spices),
+  Ingredient('Belacan', IngredientCategory.spices),
+  Ingredient('Pandan', IngredientCategory.spices),
+];
+
+const sampleRecipes = [
+  Recipe(
+    id: 'nasi-lemak',
+    title: 'Nasi Lemak',
+    minutes: 45,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.green,
+    ingredients: ['Rice', 'Coconut milk', 'Pandan', 'Eggs', 'Chili', 'Onion'],
+  ),
+  Recipe(
+    id: 'roti-canai',
+    title: 'Roti Canai',
+    minutes: 60,
+    difficulty: Difficulty.medium,
+    tone: RecipeTone.yellow,
+    ingredients: ['Flour', 'Butter', 'Eggs', 'Milk', 'Sugar'],
+  ),
+  Recipe(
+    id: 'laksa-penang',
+    title: 'Laksa Penang',
+    minutes: 75,
+    difficulty: Difficulty.medium,
+    tone: RecipeTone.red,
+    ingredients: [
+      'Noodles',
+      'Anchovies',
+      'Chili',
+      'Lemongrass',
+      'Shallots',
+      'Belacan',
+    ],
+  ),
+  Recipe(
+    id: 'satay-ayam',
+    title: 'Satay Ayam',
+    minutes: 40,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.brown,
+    ingredients: [
+      'Chicken',
+      'Lemongrass',
+      'Turmeric',
+      'Cumin',
+      'Shallots',
+      'Sugar',
+    ],
+  ),
+  Recipe(
+    id: 'mee-goreng-mamak',
+    title: 'Mee Goreng Mamak',
+    minutes: 25,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.orange,
+    ingredients: [
+      'Noodles',
+      'Eggs',
+      'Tofu',
+      'Bean sprouts',
+      'Soy sauce',
+      'Chili',
+      'Garlic',
+    ],
+  ),
+  Recipe(
+    id: 'chicken-rendang',
+    title: 'Chicken Rendang',
+    minutes: 120,
+    difficulty: Difficulty.medium,
+    tone: RecipeTone.brown,
+    ingredients: [
+      'Chicken',
+      'Coconut milk',
+      'Lemongrass',
+      'Chili',
+      'Shallots',
+      'Garlic',
+      'Turmeric',
+    ],
+  ),
+  Recipe(
+    id: 'char-kway-teow',
+    title: 'Char Kway Teow',
+    minutes: 20,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.orange,
+    ingredients: [
+      'Noodles',
+      'Prawns',
+      'Eggs',
+      'Bean sprouts',
+      'Soy sauce',
+      'Garlic',
+      'Chili',
+    ],
+  ),
+  Recipe(
+    id: 'nasi-kerabu',
+    title: 'Nasi Kerabu',
+    minutes: 50,
+    difficulty: Difficulty.medium,
+    tone: RecipeTone.green,
+    ingredients: [
+      'Rice',
+      'Cabbage',
+      'Bean sprouts',
+      'Anchovies',
+      'Coconut milk',
+      'Shallots',
+    ],
+  ),
+  Recipe(
+    id: 'ayam-masak-merah',
+    title: 'Ayam Masak Merah',
+    minutes: 60,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.red,
+    ingredients: ['Chicken', 'Tomato', 'Onion', 'Garlic', 'Chili'],
+  ),
+  Recipe(
+    id: 'cendol',
+    title: 'Cendol',
+    minutes: 30,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.yellow,
+    ingredients: ['Coconut milk', 'Pandan', 'Flour', 'Sugar'],
+  ),
+  Recipe(
+    id: 'nasi-goreng-kampung',
+    title: 'Nasi Goreng Kampung',
+    minutes: 20,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.orange,
+    ingredients: ['Rice', 'Eggs', 'Garlic', 'Onion', 'Chili'],
+  ),
+  Recipe(
+    id: 'bubur-ayam',
+    title: 'Bubur Ayam',
+    minutes: 45,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.brown,
+    ingredients: ['Chicken', 'Rice', 'Garlic', 'Onion'],
+  ),
+  Recipe(
+    id: 'telur-dadar',
+    title: 'Telur Dadar Bawang',
+    minutes: 10,
+    difficulty: Difficulty.easy,
+    tone: RecipeTone.yellow,
+    ingredients: ['Eggs', 'Onion', 'Chili'],
+  ),
+];
+
+/// Recipe ids per country code, in display order (5 each).
+const sampleSuggested = {
+  'MY': [
+    'nasi-lemak',
+    'roti-canai',
+    'laksa-penang',
+    'satay-ayam',
+    'mee-goreng-mamak',
+  ],
+};
+
+const samplePopular = {
+  'MY': [
+    'chicken-rendang',
+    'char-kway-teow',
+    'nasi-kerabu',
+    'ayam-masak-merah',
+    'cendol',
+  ],
+};
